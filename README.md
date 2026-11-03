@@ -109,3 +109,18 @@ Official project: https://github.com/AsukaCamellia/TCPFormer
 
 3. Use the official experimental configuration (for example, `configs/h36m/TCPFormer_h36m_243.yaml`), setting `dim_in: 2` for the xy embedding. The actual input remains `(B, T, J, 3)`: the model separates confidence internally. Set 16 blocks and 128 feature dimensions; train for 90 epochs with batch size 4 and initial learning rate `5e-4`.
 4. Use the official `train.py` or `train_3dhp.py` training/evaluation commands with the settings above and a ConfFormer-trained checkpoint for evaluation.
+
+## References
+
+Please also cite the corresponding backbone papers when using their ConfFormer variants:
+
+- Zhang et al. [MixSTE: Seq2seq Mixed Spatio-Temporal Encoder for 3D Human Pose Estimation in Video](https://github.com/JinluZhang1126/MixSTE), CVPR 2022.
+- Zhu et al. [MotionBERT: A Unified Perspective on Learning Human Motion Representations](https://github.com/Walter0807/MotionBERT), ICCV 2023.
+- Peng et al. [KTPFormer: Kinematics and Trajectory Prior Knowledge-Enhanced Transformer for 3D Human Pose Estimation](https://github.com/JihuaPeng/KTPFormer), CVPR 2024.
+- Liu et al. [TCPFormer: Learning Temporal Correlation with Implicit Pose Proxy for 3D Human Pose Estimation](https://github.com/AsukaCamellia/TCPFormer), AAAI 2025.
+
+## Acknowledgements
+
+We thank the authors of [MixSTE](https://github.com/JinluZhang1126/MixSTE), [MotionBERT](https://github.com/Walter0807/MotionBERT), [KTPFormer](https://github.com/JihuaPeng/KTPFormer), and [TCPFormer](https://github.com/AsukaCamellia/TCPFormer) for releasing their backbone implementations. Our model variants build on these projects. We also acknowledge [VideoPose3D](https://github.com/facebookresearch/VideoPose3D) and [3D Pose Baseline](https://github.com/una-dinosauria/3d-pose-baseline) for foundational code used in the data-processing and evaluation pipeline.
+
+We thank the dataset providers and the authors of CPN, Stacked Hourglass, HRNet, and OpenPose, linked above, for making their data and detector implementations available. Original copyright notices and license terms apply to the respective upstream components.
